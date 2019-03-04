@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>魔兽世界CG</title>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../data/mock.js"></script>
+	</head>
+	<body>
+	    <div class="video" style="width: 1000px;height: 600px; margin: 100px auto;"></div>
+	</body>
+	<script type="text/javascript" src="../js/ckplayer.js"></script>
+	<script src="../js/getVideo.js"></script>
+	<script type="text/javascript">
+		var video_numb = window.location.search.split("=")[1]-1;
+		console.log(video_numb);
+		var the_url = '';
+		$.ajax({
+			url:'/www',
+			dataType:'json',
+			success:function(e){
+				// console.log(e.list[video_numb]);
+				for(var key in e.list[video_numb]){
+					//console.log(e.list[video_numb][key]);
+					the_url+=e.list[video_numb][key];
+					console.log(the_url);
+					
+					var videoObject = {
+						container:".video",
+						variable:"player",
+						poster:"../img/world/dellking.jpg",
+						video: the_url
+					}
+					var player=new ckplayer(videoObject);
+					
+				}
+			}
+		});
+		
+		
+	</script>
+</html>

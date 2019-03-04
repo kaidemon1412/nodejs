@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.about_page {
+  width: 100%;
+  min-width: 1300px;
+  overflow: hidden;
+}
+
+.about_page .about_page_title {
+  font: bold 29px "微软雅黑";
+  color: #333;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.about_page .leadership_statement, .about_page .movement, .about_page .lift_fun, .about_page .gastronomy_beauty {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.about_page .leadership_statement .about_item_title, .about_page .movement .about_item_title, .about_page .lift_fun .about_item_title, .about_page .gastronomy_beauty .about_item_title {
+  font: bold 20px "微软雅黑";
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.about_page .leadership_statement .about_item_text, .about_page .movement .about_item_text, .about_page .lift_fun .about_item_text, .about_page .gastronomy_beauty .about_item_text {
+  font: normal 16px "微软雅黑";
+  color: #333;
+  text-indent: 2em;
+  letter-spacing: 2px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.about_page .leadership_statement .about_item_text .illustration, .about_page .movement .about_item_text .illustration, .about_page .lift_fun .about_item_text .illustration, .about_page .gastronomy_beauty .about_item_text .illustration {
+  width: 450px;
+  float: right;
+  margin-left: 20px;
+}

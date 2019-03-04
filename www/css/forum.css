@@ -1,0 +1,736 @@
+@charset "UTF-8";
+.frist_nodejs_page {
+  width: 100%;
+  min-width: 1360px;
+  overflow: hidden;
+  background: url(../img/black_bg.jpg) repeat;
+}
+
+.frist_nodejs_page .cartoon_forum_nav {
+  width: 100%;
+  background: url(../img/footerbg.jpg) no-repeat center center;
+  background-size: 100% auto;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont {
+  width: 1360px;
+  margin: 0 auto;
+  height: 78px;
+  display: flex;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .logo_link {
+  width: 78px;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_logo {
+  height: 100%;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list {
+  display: flex;
+  flex-direction: row;
+  color: #FFF;
+  font-size: 20px;
+  font-family: "微软雅黑";
+  font-weight: bold;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li .nav_item {
+  width: 100%;
+  height: 100%;
+  line-height: 78px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li .nav_item a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li .nav_item:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 78px;
+  position: absolute;
+  top: 74px;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li .nav_item:hover + .sub_nav {
+  opacity: 1;
+  display: block;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(1) .nav_item:after {
+  background-color: red;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(1) .nav_item a {
+  color: red;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(2) .nav_item:after {
+  background-color: #2196f3;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(2) .nav_item a {
+  color: #2196f3;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(3) .nav_item:after {
+  background-color: #ff9800;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(3) .nav_item a {
+  color: #ff9800;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(4) .nav_item:after {
+  background-color: #a776ff;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(4) .nav_item a {
+  color: #a776ff;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(5) .nav_item:after {
+  background-color: #86F5F0;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(5) .nav_item a {
+  color: #86F5F0;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(6) .nav_item:after {
+  background-color: #5dd662;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(6) .nav_item a {
+  color: #5dd662;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(7) .nav_item:after {
+  background-color: #FFC2D8;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(7) .nav_item a {
+  color: #FFC2D8;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(8) .nav_item:after {
+  background-color: #f45a8d;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:nth-of-type(8) .nav_item a {
+  color: #f45a8d;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li .sub_nav {
+  position: absolute;
+  top: 78px;
+  left: 0;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  box-shadow: 0 2px 4px #CADCD4;
+  display: none;
+  opacity: 0;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li .sub_nav li a {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  color: #333333;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li .sub_nav li a:hover {
+  color: #428ce1;
+  background-color: #f5f5f5;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:hover .nav_item:after {
+  top: 0;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:hover .nav_item a {
+  color: #fff !important;
+}
+
+.frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li:hover .sub_nav {
+  display: block;
+  opacity: 1;
+}
+
+.frist_nodejs_page .cartoon_banner {
+  width: 1360px;
+  margin: 0 auto;
+}
+
+.frist_nodejs_page .cartoon_cont {
+  width: 1360px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(1) {
+  font: bold 30px "微软雅黑";
+  color: red;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+.frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(2) {
+  font: bold 30px "微软雅黑";
+  color: #2196f3;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+.frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(3) {
+  font: bold 30px "微软雅黑";
+  color: #ff9800;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+.frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(4) {
+  font: bold 30px "微软雅黑";
+  color: #a776ff;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+.frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(5) {
+  font: bold 30px "微软雅黑";
+  color: #86F5F0;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+.frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(6) {
+  font: bold 30px "微软雅黑";
+  color: #5dd662;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+.frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(7) {
+  font: bold 30px "微软雅黑";
+  color: #FFC2D8;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont .basketball_team {
+  width: 100%;
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont .basketball_team ul {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont .basketball_team ul li {
+  flex: 1;
+  width: 180px;
+  height: 100%;
+  position: relative;
+  border-left: 1px solid #aaa;
+  box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.4);
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont .basketball_team ul li .team_describes {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 20px;
+  background-color: 0, 0, 0, 0.5;
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont .basketball_team ul li .team_describes .team_describes_title {
+  font: 16px normal "微软雅黑";
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont .basketball_team ul li .team_describes .team_describes_text {
+  font: 16px normal "微软雅黑";
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont .basketball_team ul li .team_describes_img {
+  display: block;
+  width: 850px;
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont .basketball_team ul:hover li {
+  width: 73.7px;
+}
+
+.frist_nodejs_page .cartoon_cont .sports_cont .basketball_team ul:hover li:hover {
+  width: 850px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .plate_title_small {
+  font-size: 20px;
+  color: #333;
+  font-family: "微软雅黑";
+  padding: 30px 0 30px;
+  text-indent: 15px;
+  position: relative;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .plate_title_small:before {
+  content: "";
+  width: 4px;
+  height: 22px;
+  background-color: #FF9800;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .plate_title_small .more_btn {
+  float: right;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: rgba(4, 0, 0, 0.11) 2px 3px 16px 1px;
+  z-index: 10;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_item_top {
+  width: 100%;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_item_top img {
+  width: 100%;
+  transform: rotate(360deg) scale(1, 1);
+  transition: 0.6s;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.6s;
+  box-sizing: border-box;
+  transform: rotate(0deg) scale(0, 0);
+  padding: 15px 20px 20px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_text h3 {
+  font-weight: normal;
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_text p {
+  text-indent: 2em;
+  text-align: justify;
+  font-weight: 300;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_text a {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  border: 2px solid #4d92d9;
+  background-color: #4d92d9;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_text a:hover {
+  background-color: transparent;
+  color: #4d92d9;
+  transition: 0.4s;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item:hover .cycle_item_top img {
+  transform: rotate(0deg) scale(0, 0);
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item:hover .cycle_text {
+  transform: rotate(360deg) scale(1, 1);
+  opacity: 1;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: rgba(4, 0, 0, 0.11) 2px 3px 16px 1px;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_item_top {
+  width: 100%;
+  overflow: hidden;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_item_top img {
+  width: 100%;
+  transform: rotate(360deg) scale(1, 1);
+  transition: 0.6s;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_item_top:hover {
+  cursor: pointer;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_item_top:hover img {
+  transform: rotate(360deg) scale(1.5, 1.5);
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.6s;
+  box-sizing: border-box;
+  transform: rotate(0deg) scale(0, 0);
+  padding: 15px 20px 20px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_text h3 {
+  font-weight: normal;
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_text p {
+  text-indent: 2em;
+  text-align: justify;
+  font-weight: 300;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_text a {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  border: 2px solid #4d92d9;
+  background-color: #4d92d9;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_text a:hover {
+  background-color: transparent;
+  color: #4d92d9;
+  transition: 0.4s;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left {
+  padding: 0px 0 30px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .plate_title_small {
+  font-size: 20px;
+  color: #333;
+  font-family: "微软雅黑";
+  padding: 30px 0 30px;
+  text-indent: 15px;
+  position: relative;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .plate_title_small:before {
+  content: "";
+  width: 4px;
+  height: 22px;
+  background-color: #FF9800;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .plate_title_small .more_btn {
+  float: right;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_video_plate {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_video_plate .video_item_card {
+  border: solid 1px #e8e8e8;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_video_plate .video_item_card:hover {
+  box-shadow: 0px 2px 4px 0px rgba(83, 83, 83, 0.35);
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_video_plate .video_item_card a {
+  text-decoration: none;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_video_plate .video_item_card .video_img {
+  width: 300px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_video_plate .video_item_card .video_title {
+  font-size: 16px;
+  font-family: "微软雅黑";
+  color: #333333;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_img_plate {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_img_plate .image_bar {
+  position: relative;
+  width: 300px;
+  height: 140px;
+  overflow: hidden;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_img_plate .image_bar .img_item {
+  width: 100%;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_img_plate .image_bar .download_img {
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+  transition: all 0.5s;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_img_plate .image_bar .download_img a {
+  text-decoration: none;
+  color: #FFF;
+  line-height: 1.6;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_img_plate .image_bar:hover .download_img {
+  bottom: 0px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right {
+  padding: 0px 0 30px;
+  flex: 1;
+  margin-left: 20px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .plate_title_small {
+  font-size: 20px;
+  color: #333;
+  font-family: "微软雅黑";
+  padding: 30px 0 30px;
+  text-indent: 15px;
+  position: relative;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .plate_title_small:before {
+  content: "";
+  width: 4px;
+  height: 22px;
+  background-color: #FF9800;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .plate_title_small .more_btn {
+  float: right;
+  margin-right: 20px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list {
+  padding: 0px 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  height: 715px;
+  overflow-y: auto;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list .music_item {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list .music_item .music_title {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-gap: 10px;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list .music_item .music_title .music_play_img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list .music_item .music_title .music_information {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list .music_item .music_title .music_information .music_name {
+  color: #333;
+  font-size: 14px;
+  font-family: "微软雅黑";
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list .music_item .music_title .music_information .music_author {
+  color: #666;
+  font-size: 12px;
+  font-family: "微软雅黑";
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list .music_item .download {
+  font-size: 12px;
+  color: #333;
+  font-family: "微软雅黑";
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list .bottom_line {
+  color: #999;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  text-align: center;
+}
+
+.frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list::-webkit-scrollbar {
+  display: none;
+}
+
+.frist_nodejs_page .cartoon_footer {
+  width: 100%;
+  background: url(../img/footerbg.jpg) no-repeat center center;
+  background-size: 100% auto;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.frist_nodejs_page .cartoon_footer .about_then {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #fff;
+  font-family: "微软雅黑";
+  text-align: center;
+  padding: 20px 0;
+}
+
+.frist_nodejs_page .cartoon_footer .about_then a {
+  color: #2196F3;
+}
+
+.frist_nodejs_page .cartoon_footer .net_synopsis {
+  width: 1300px;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: #fff;
+  font-size: 14px;
+  text-indent: 2em;
+}

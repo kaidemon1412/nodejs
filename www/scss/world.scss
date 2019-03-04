@@ -1,0 +1,66 @@
+.world_of_warcraft{
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    .world_of_warcraft_top{
+        width: 100%;
+        background-color: #202932;
+        height: 78px;
+        .world_of_warcraft_nav{
+            width: 1200px;
+            margin: 0 auto;
+            color: #fff;
+            font-size: 16px;
+            font-family: "微软雅黑";
+            font-weight: bold;
+            text-align: center;
+            line-height: 78px;
+            
+        }
+    }
+    .world_of_warcraft_banner{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .world_cg{
+        width: 1200px;
+        margin: 0 auto;
+        .world_cg_title{
+            font-size: 20px;
+            color: #333;
+            font-family: "微软雅黑";
+            padding: 30px 0 30px;
+            text-indent: 15px;
+            position: relative;
+            &:after{
+                content: "";
+                width: 4px;
+                height: 22px;
+                background-color: #FF9800;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 30px;
+            }
+        }
+        .world_cg_cont{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            .world_cg_item{
+                width: auto;
+                .cg_img{
+                    width: 100%;
+                }
+                .cg_item_title{
+                    padding: 10px 0;
+                    font-size: 15px;
+                    color: #333;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    
+}
