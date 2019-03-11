@@ -367,7 +367,7 @@
 
 .frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_item_top img {
   width: 100%;
-  transform: rotate(360deg) scale(1, 1);
+  transform: rotate(0deg) scale(1, 1);
   transition: 0.6s;
 }
 
@@ -417,11 +417,20 @@
   transition: 0.4s;
 }
 
-.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item:hover .cycle_item_top img {
-  transform: rotate(0deg) scale(0, 0);
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item:nth-of-type(odd):hover .cycle_item_top img {
+  transform: rotate(360deg) scale(0, 0);
 }
 
-.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item:hover .cycle_text {
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item:nth-of-type(odd):hover .cycle_text {
+  transform: rotate(-360deg) scale(1, 1);
+  opacity: 1;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item:nth-of-type(even):hover .cycle_item_top img {
+  transform: rotate(-360deg) scale(0, 0);
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item:nth-of-type(even):hover .cycle_text {
   transform: rotate(360deg) scale(1, 1);
   opacity: 1;
 }

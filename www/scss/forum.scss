@@ -327,7 +327,7 @@
                         width: 100%;
                         img{
                             width: 100%;
-                            transform: rotate(360deg) scale(1, 1);
+                            transform: rotate(0deg) scale(1, 1);
                             transition: 0.6s;
                         }
                     }
@@ -373,16 +373,30 @@
                             }
                         }
                     }
-                    
-                    &:hover{
-                        .cycle_item_top img{
-                            transform: rotate(0deg) scale(0, 0);
-                        }
-                        .cycle_text{
-                            transform: rotate(360deg) scale(1, 1);
-                            opacity: 1;
+                    &:nth-of-type(odd){
+                        &:hover{
+                            .cycle_item_top img{
+                                transform: rotate(360deg) scale(0, 0);
+                            }
+                            .cycle_text{
+                                transform: rotate(-360deg) scale(1, 1);
+                                opacity: 1;
+                            }
                         }
                     }
+
+                    &:nth-of-type(even){
+                        &:hover{
+                            .cycle_item_top img{
+                                transform: rotate(-360deg) scale(0, 0);
+                            }
+                            .cycle_text{
+                                transform: rotate(360deg) scale(1, 1);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    
                 }
             }
             .scenery_plate_foot{
