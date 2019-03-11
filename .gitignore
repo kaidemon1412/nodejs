@@ -1,4 +1,4 @@
 #此为注释 - 将被 Git忽略
 *.mp4
-/.vscode
+*.vscode
 *.project
