@@ -210,22 +210,87 @@
 						document.title = e.b_video_list[0].title;
 						$(".video_title span").html(e.b_video_list[0].title);
 						var videoObject01 = {
-							container:".video",
-							variable:"player",
-							poster:"",
+							container: '.my_ckplayer',//“#”代表容器的ID，“.”或“”代表容器的class
+							variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+							poster:"",//这是封面图片 ../img/world/dellking.jpg
+							mobileCkControls:true,//是否在移动端（包括ios）环境中显示控制栏
+							mobileAutoFull:false,//在移动端播放后是否按系统设置的全屏播放
+							h5container:'#ckplayer_video',//h5环境中使用自定义容器
 							video: e.b_video_list[0].url + e.b_video_list[0].file_name
 						}
 						var player=new ckplayer(videoObject01);
+
+						var the_comment = '';
+						for(var i = 0 ; i < e.b_video_list[0].comments.length ; i++){
+							the_comment+=`<div class="comment_item">
+									<div class="img_box">
+										<img src="`+e.b_video_list[0].comments[i].avatar+`" alt="">
+									</div>
+									<div class="comment_box">
+										<a href="javascript:;">`+e.b_video_list[0].comments[i].user_name+`：</a>
+										<span>`+e.b_video_list[0].comments[i].comment+`</span>
+									</div>
+								</div>`;
+						}
+						$(".wonderful_list").html(the_comment);
+						
+						var the_comment_new = '';
+						for(var i = 0 ; i < e.b_video_list[0].comments_new.length ; i++){
+							the_comment_new+=`<div class="comment_item">
+									<div class="img_box">
+										<img src="`+e.b_video_list[0].comments_new[i].avatar+`" alt="">
+									</div>
+									<div class="comment_box">
+										<a href="javascript:;">`+e.b_video_list[0].comments_new[i].user_name+`：</a>
+										<span>`+e.b_video_list[0].comments_new[i].comment+`</span>
+									</div>
+								</div>`;
+						}
+						$(".new_list").html(the_comment_new);
+
+
 					}else if(video_numb == 'qfff'){
 						document.title = e.b_video_list[1].title;
 						$(".video_title span").html(e.b_video_list[1].title);
 						var videoObject02 = {
-							container:".video",
-							variable:"player",
-							poster:"",
+							container: '.my_ckplayer',//“#”代表容器的ID，“.”或“”代表容器的class
+							variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+							poster:"",//这是封面图片 ../img/world/dellking.jpg
+							mobileCkControls:true,//是否在移动端（包括ios）环境中显示控制栏
+							mobileAutoFull:false,//在移动端播放后是否按系统设置的全屏播放
+							h5container:'#ckplayer_video',//h5环境中使用自定义容器
 							video: e.b_video_list[1].url+e.b_video_list[1].file_name
 						}
 						var player=new ckplayer(videoObject02);
+
+						var the_comment = '';
+						for(var i = 0 ; i < e.b_video_list[1].comments.length ; i++){
+							the_comment+=`<div class="comment_item">
+									<div class="img_box">
+										<img src="`+e.b_video_list[1].comments[i].avatar+`" alt="">
+									</div>
+									<div class="comment_box">
+										<a href="javascript:;">`+e.b_video_list[1].comments[i].user_name+`：</a>
+										<span>`+e.b_video_list[1].comments[i].comment+`</span>
+									</div>
+								</div>`;
+						}
+						$(".wonderful_list").html(the_comment);
+						
+						var the_comment_new = '';
+						for(var i = 0 ; i < e.b_video_list[1].comments_new.length ; i++){
+							the_comment_new+=`<div class="comment_item">
+									<div class="img_box">
+										<img src="`+e.b_video_list[1].comments_new[i].avatar+`" alt="">
+									</div>
+									<div class="comment_box">
+										<a href="javascript:;">`+e.b_video_list[1].comments_new[i].user_name+`：</a>
+										<span>`+e.b_video_list[1].comments_new[i].comment+`</span>
+									</div>
+								</div>`;
+						}
+						$(".new_list").html(the_comment_new);
+
 					}
 					
 				}
@@ -233,50 +298,50 @@
 		}
 
 		// 获取精彩评论列表
-		$.ajax({
-			url:'/comment',
-			dataType:'json',
-			success:function(e){
-				console.log(e);
-				var the_comment = '';
-				for(var i = 0 ; i < e.comment_list.length ; i++){
-					the_comment+=`<div class="comment_item">
-							<div class="img_box">
-								<img src="`+e.comment_list[i].avatar+`" alt="">
-							</div>
-							<div class="comment_box">
-								<a href="javascript:;">`+e.comment_list[i].user_name+`：</a>
-								<span>`+e.comment_list[i].comment+`</span>
-							</div>
-						</div>`;
-				}
-				$(".wonderful_list").html(the_comment);
+		// $.ajax({
+		// 	url:'/comment',
+		// 	dataType:'json',
+		// 	success:function(e){
+		// 		console.log(e);
+		// 		var the_comment = '';
+		// 		for(var i = 0 ; i < e.comment_list.length ; i++){
+		// 			the_comment+=`<div class="comment_item">
+		// 					<div class="img_box">
+		// 						<img src="`+e.comment_list[i].avatar+`" alt="">
+		// 					</div>
+		// 					<div class="comment_box">
+		// 						<a href="javascript:;">`+e.comment_list[i].user_name+`：</a>
+		// 						<span>`+e.comment_list[i].comment+`</span>
+		// 					</div>
+		// 				</div>`;
+		// 		}
+		// 		$(".wonderful_list").html(the_comment);
 
-			}
-		});
+		// 	}
+		// });
 
 		// 获取最新评论列表
-		$.ajax({
-			url:'/comment-new',
-			dataType:'json',
-			success:function(e){
-				console.log(e);
-				var the_comment = '';
-				for(var i = 0 ; i < e.comment_list.length ; i++){
-					the_comment+=`<div class="comment_item">
-							<div class="img_box">
-								<img src="`+e.comment_list[i].avatar+`" alt="">
-							</div>
-							<div class="comment_box">
-								<a href="javascript:;">`+e.comment_list[i].user_name+`：</a>
-								<span>`+e.comment_list[i].comment+`</span>
-							</div>
-						</div>`;
-				}
-				$(".new_list").html(the_comment);
+		// $.ajax({
+		// 	url:'/comment-new',
+		// 	dataType:'json',
+		// 	success:function(e){
+		// 		console.log(e);
+		// 		var the_comment = '';
+		// 		for(var i = 0 ; i < e.comment_list.length ; i++){
+		// 			the_comment+=`<div class="comment_item">
+		// 					<div class="img_box">
+		// 						<img src="`+e.comment_list[i].avatar+`" alt="">
+		// 					</div>
+		// 					<div class="comment_box">
+		// 						<a href="javascript:;">`+e.comment_list[i].user_name+`：</a>
+		// 						<span>`+e.comment_list[i].comment+`</span>
+		// 					</div>
+		// 				</div>`;
+		// 		}
+		// 		$(".new_list").html(the_comment);
 
-			}
-		});
+		// 	}
+		// });
 
 		
 		
