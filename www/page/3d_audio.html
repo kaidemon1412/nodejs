@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+<title>canvas音乐频谱</title>
+<link rel="stylesheet" href="../css/reset.css">
+<style>
+	.audio_cont {
+		margin:0;
+		background: url(../img/black_bg.jpg) repeat;
+		min-height: 100vh;
+		}
+	#cvs {
+			display:block;
+			margin:0 auto;
+		}
+		.on_play{
+			color: #fff;
+			width: 800px;
+			margin: 20px auto 0;
+			
+		}
+		.on_play a{
+			display: block;
+			width: 50px;
+			height: 50px;
+			background: url(../img/play.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		.music_list{
+			width: 800px;
+			margin: 50px auto;
+			color: #fff;
+		}
+		.music_list .music_item{
+			margin-bottom: 20px;
+			cursor: pointer;
+		}
+</style>
+</head>
+<body>
+	<div class="audio_cont">
+		<canvas id="cvs"></canvas>
+		<audio src="../audio/Expelled.mp3" id="audio" ></audio>
+
+		<div class="on_play">
+			<a href="javascript:;"></a>
+		</div>
+
+		<ul class="music_list"></ul>
+
+	</div>
+
+
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../data/mock.js"></script>
+<script src="../js/getVideo.js"></script>
+<script>
+
+	window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+	
+	if( typeof window.AudioContext != 'undefined' ) {
+		var flag = true;
+		var audio = document.getElementById('audio');
+		var ctx = new AudioContext();
+		var analyser = ctx.createAnalyser();
+		var audioSrc = ctx.createMediaElementSource(audio);
+		audioSrc.connect(analyser);
+		analyser.connect(ctx.destination);
+		var frequencyData = new Uint8Array(analyser.frequencyBinCount);
+		var cvs = document.getElementById('cvs');
+		cvs.width = 800;
+		cvs.height = 350;
+		var cwidth = cvs.width,
+			cheight = cvs.height - 2,//这里减的是顶子的高度
+			meterWidth = 10, //柱宽
+			gap = 2, //柱间距
+			capHeight = 2,	//顶子的高度
+			capStyle = '#fff',
+			meterNum = 800 / (10+2), //count of the meters
+			capYPositionArray = []; ////store the vertical position of hte caps for the preivous frame
+		ctx = cvs.getContext('2d');
+		gradient = ctx.createLinearGradient(0, 0, 0, 300);
+		gradient.addColorStop(1, '#0f0');
+        gradient.addColorStop(0.5, '#ff0');
+        gradient.addColorStop(0, '#f00');
+		// loop
+		function renderFrame() {
+			var array = new Uint8Array(analyser.frequencyBinCount);
+			analyser.getByteFrequencyData(array);
+			var step = Math.round(array.length / meterNum); //sample limited data from the total array
+			ctx.clearRect(0, 0, cwidth, cheight);
+			for (var i = 0; i < meterNum; i++) {
+				var value = array[i * step];
+				if (capYPositionArray.length < Math.round(meterNum)) {
+					capYPositionArray.push(value);
+				};
+				ctx.fillStyle = capStyle;
+				//draw the cap, with transition effect
+				if (value < capYPositionArray[i]) {
+					ctx.fillRect(i *(meterWidth+gap), cheight - (--capYPositionArray[i]), meterWidth, capHeight);
+				} else {
+					ctx.fillRect(i *(meterWidth+gap), cheight - value, meterWidth, capHeight);
+					capYPositionArray[i] = value;
+				};
+				ctx.fillStyle = gradient; //set the filllStyle to gradient for a better look  '#90c400'
+				ctx.fillRect(i *(meterWidth+gap), cheight - value + capHeight, meterWidth, cheight); //the meter
+			}
+			requestAnimationFrame(renderFrame);
+		}
+		
+		requestAnimationFrame(renderFrame);
+		// renderFrame();
+		
+		$(".on_play").on('click',function(){
+			if(flag){
+				// renderFrame();
+				audio.load();
+				audio.play();
+				$(this).find('a').css({
+					'background':'url(../img/pause.png) no-repeat',
+					'background-size':'100% 100%'
+				})
+				flag = false;
+			}else{
+				audio.pause();
+				$(this).find('a').css({
+					'background':'url(../img/play.png) no-repeat',
+					'background-size':'100% 100%'
+				})
+				flag = true;
+			}
+		});
+		audio.addEventListener('ended', function () {  
+			$(".on_play").find('a').css({
+					'background':'url(../img/play.png) no-repeat',
+					'background-size':'100% 100%'
+				});
+			flag = true;
+		}, false);
+
+		$.ajax({
+				url:'/music',
+				dataType:'json',
+				success:function(e){
+                    console.log(e.music_list);
+                    
+                    var music_item = '';
+
+                    e.music_list.forEach(element => {
+                        // console.log(element);
+                        music_item+=`<li class="music_item">
+                                    <div class="music_information">
+                                        <h4 class="music_name">`+element.title+`</h4>
+                                        <p class="music_author">`+element.author+`</p>
+                                    </div>
+                            </li>`;
+						$('.music_list').html(music_item);
+						
+						$('.music_item').on('click',function(){
+							console.log($(this).index());
+							// console.log();
+							let music_index = $(this).index();
+							$('#audio').attr('src', e.music_list[music_index].music);
+							
+							audio.load();
+							audio.play();
+							console.log(audio.duration);
+							console.log(formatSeconds(audio.duration));
+							$('.on_play').find('a').css({
+								'background':'url(../img/pause.png) no-repeat',
+								'background-size':'100% 100%'
+							});
+							
+							flag = false;
+
+						});
+
+                    });
+				}
+			});
+
+
+	}
+
+
+	function formatSeconds(value) {
+	        var secondTime = parseInt(value);// 秒
+	        var minuteTime = 0;// 分
+	        var hourTime = 0;// 小时
+	        if(secondTime > 60) {//如果秒数大于60，将秒数转换成整数
+	            //获取分钟，除以60取整数，得到整数分钟
+	            minuteTime = parseInt(secondTime / 60);
+	            //获取秒数，秒数取佘，得到整数秒数
+	            secondTime = parseInt(secondTime % 60);
+	            //如果分钟大于60，将分钟转换成小时
+	            if(minuteTime > 60) {
+	                //获取小时，获取分钟除以60，得到整数小时
+	                hourTime = parseInt(minuteTime / 60);
+	                //获取小时后取佘的分，获取分钟除以60取佘的分
+	                minuteTime = parseInt(minuteTime % 60);
+	            }
+	        }
+	        var result = "" + parseInt(secondTime) + "";
+ 
+	        if(minuteTime > 0) {
+	        	result = "" + parseInt(minuteTime) + ":" + result;
+	        }
+	        if(hourTime > 0) {
+	        	result = "" + parseInt(hourTime) + ":" + result;
+	        }
+	        return result;
+	    }
+
+
+</script>
+</body>
+</html>

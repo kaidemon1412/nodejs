@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/html5_audio_visualizer.js"></script>
+    <title>音乐播放页面</title>
+    <style>
+        #wrapper{
+            width: 100%;
+            min-width: 1360px;
+            overflow: hidden;
+            background: url(../img/black_bg.jpg) repeat;
+            min-height: 100vh
+        }
+
+        #canvas{
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+        <div id="wrapper">
+            <div id="fileWrapper" class="file_wrapper">
+                <div id="info">
+                未选择任何文件
+                </div>
+                <label for="uploadedFile">选择本地mp3文本查看效果:</label>
+                <input type="file" id="uploadedFile"></input>
+            </div>
+            <div id="visualizer_wrapper">
+                <canvas id='canvas' width="800" height="350"></canvas>
+            
+            </div>
+        </div>
+        
+    <!-- <div class="audio_mian">
+        <div class="audio_cont">
+            
+            <canvas id='canvas' width="800" height="350"></canvas>
+        </div>
+
+    </div> -->
+</body>
+</html>

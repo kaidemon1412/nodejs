@@ -138,3 +138,62 @@ var work_list = Mock.mock('/comment',{
 //       'comment|':'说到金庸的著作，在那些个主角里面，乔峰乔帮主、张无忌张教主、石破天石帮主、杨过、郭靖、令狐冲等等，哲学看过的电视剧。张教主太渣男，说到我个人最欣赏两个人令狐冲和杨过，亦正亦邪，他们两个最为自由这也是我所向往的。',
 //   }]
 // });
+
+// 音乐列表
+var music_list = Mock.mock('/music',{
+  'music_list|1-1':[{
+    'music|':'../audio/bring_me_back_to_life.mp3',
+    'title|':'Bring Me Back to Life',
+    'author|':'Ht Bristol',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/Expelled.mp3',
+    'title|':'Expelled',
+    'author|':'Brand X Music',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/fireflies.mp3',
+    'title|':'fireflies',
+    'author|':'Ryan Farish',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/freedom.mp3',
+    'title|':'freedom',
+    'author|':'Epic Score',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/hongyan.mp3',
+    'title|':'hongyan',
+    'author|':'高梨康治',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/skyland.mp3',
+    'title|':'skyland',
+    'author|':'Mich',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/mind_heist.mp3',
+    'title|':'mind_heist',
+    'author|':'Zack Hemsey',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/wujian.mp3',
+    'title|':'wujian',
+    'author|':'高梨康治',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  }]
+    
+});
+
+
+
+
+

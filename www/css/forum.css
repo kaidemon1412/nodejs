@@ -565,7 +565,7 @@
 
 .frist_nodejs_page .cartoon_cont .cartoon_cont_comics .video_img_left .cartoon_video_plate .video_item_card .layer_box {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 25px);
   position: absolute;
   top: 0;
   left: 0;
