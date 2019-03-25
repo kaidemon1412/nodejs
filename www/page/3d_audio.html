@@ -7,9 +7,11 @@
 <link rel="stylesheet" href="../css/reset.css">
 <style>
 	.audio_cont {
-		margin:0;
-		background: url(../img/black_bg.jpg) repeat;
-		min-height: 100vh;
+			width: 100%;
+			margin:0;
+			background: url(../img/black_bg.jpg) repeat;
+			min-height: 100vh;
+			overflow: hidden;
 		}
 	#cvs {
 			display:block;
@@ -19,7 +21,7 @@
 			color: #fff;
 			width: 800px;
 			margin: 20px auto 0;
-			
+			display: flex;
 		}
 		.on_play a{
 			display: block;
@@ -28,6 +30,59 @@
 			background: url(../img/play.png) no-repeat;
 			background-size: 100% 100%;
 		}
+		/* 进度条控制模块 */
+		.on_play .progre_box{
+			flex: 1;
+			padding: 0 0 0 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+		/* 歌曲时间进度 */
+		.on_play .progre_box .time_line{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: #fff;
+			font-size: 20px;
+			
+		}
+		/* 歌曲进度条进度 */
+		.on_play .progre_box .progre_strip{
+			height: 6px;
+			border-radius: 3px;
+			background-color:#454546;
+		}
+		.on_play .progre_box .progre_strip .fill_box{
+			height: 100%;
+			border-radius: 3px;
+			width: 0%;
+			background-color: rgb(204, 0, 0);
+			position: relative;
+		}
+		.on_play .progre_box .progre_strip .fill_box .mark_shape{
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background-color: #fff;
+			position: absolute;
+			right: -6px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			
+		}
+		
+		.on_play .progre_box .progre_strip .fill_box .mark_shape .center_point{
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: rgb(204, 0, 0);
+		}
+		/* 歌曲列表 */
 		.music_list{
 			width: 800px;
 			margin: 50px auto;
@@ -42,12 +97,25 @@
 <body>
 	<div class="audio_cont">
 		<canvas id="cvs"></canvas>
-		<audio src="../audio/Expelled.mp3" id="audio" ></audio>
+		<audio src="" id="audio" ></audio>
 
 		<div class="on_play">
 			<a href="javascript:;"></a>
+			<div class="progre_box">
+				<div class="progre_strip" id="processall">
+					<div class="fill_box">
+						<div class="mark_shape">
+							<div class="center_point"></div>
+						</div>
+					</div>
+				</div>
+				<div class="time_line">
+					<span id="start_time">00:00</span>
+					<span id="end_time">00:00</span>
+				</div>
+			</div>
 		</div>
-
+		
 		<ul class="music_list"></ul>
 
 	</div>
@@ -62,6 +130,9 @@
 	
 	if( typeof window.AudioContext != 'undefined' ) {
 		var flag = true;
+		var music_arr = [];
+		var music_item = '';
+		var play_time = '';
 		var audio = document.getElementById('audio');
 		var ctx = new AudioContext();
 		var analyser = ctx.createAnalyser();
@@ -113,7 +184,7 @@
 		requestAnimationFrame(renderFrame);
 		// renderFrame();
 		
-		$(".on_play").on('click',function(){
+		$(".on_play a").on('click',function(){
 			if(flag){
 				// renderFrame();
 				audio.load();
@@ -124,6 +195,9 @@
 				})
 				flag = false;
 			}else{
+				if(play_time != ''){
+					clearInterval(play_time);
+				}
 				audio.pause();
 				$(this).find('a').css({
 					'background':'url(../img/play.png) no-repeat',
@@ -145,75 +219,146 @@
 				dataType:'json',
 				success:function(e){
                     console.log(e.music_list);
-                    
-                    var music_item = '';
-
-                    e.music_list.forEach(element => {
-                        // console.log(element);
-                        music_item+=`<li class="music_item">
-                                    <div class="music_information">
-                                        <h4 class="music_name">`+element.title+`</h4>
-                                        <p class="music_author">`+element.author+`</p>
-                                    </div>
-                            </li>`;
-						$('.music_list').html(music_item);
-						
-						$('.music_item').on('click',function(){
-							console.log($(this).index());
-							// console.log();
-							let music_index = $(this).index();
-							$('#audio').attr('src', e.music_list[music_index].music);
-							
-							audio.load();
-							audio.play();
-							console.log(audio.duration);
-							console.log(formatSeconds(audio.duration));
-							$('.on_play').find('a').css({
-								'background':'url(../img/pause.png) no-repeat',
-								'background-size':'100% 100%'
-							});
-							
-							flag = false;
-
-						});
-
-                    });
+                    music_arr = e.music_list;
+                    music_arr.forEach(itemCont);
 				}
 			});
 
-
+		
 	}
 
 
+	// 这是forEach遍历数据渲染
+	function itemCont(element) {
+		// console.log(element);
+		music_item+=`<li class="music_item">
+					<div class="music_information">
+						<h4 class="music_name">`+element.title+`</h4>
+						<p class="music_author">`+element.author+`</p>
+					</div>
+			</li>`;
+		$('.music_list').html(music_item);
+		
+		$('.music_item').on('click',function(){
+			console.log($(this).index());
+			// console.log();
+			let music_index = $(this).index();
+			// $('#audio').attr('src', e.music_list[music_index].music);
+			audio.src = music_arr[music_index].music;
+			audio.load();
+			audio.play();
+			audio.oncanplay = function(){
+				// console.log(audio.duration);
+				// console.log(formatSeconds(audio.duration));
+				$("#end_time").html(formatSeconds(audio.duration));
+				var n = parseInt(audio.duration),m = 0;
+				if(play_time != ''){
+					clearInterval(play_time);
+				
+					play_time = setInterval(function(){
+						if(m < n){
+							m++;
+							// console.log(formatSeconds(m));
+							// console.log(Percentage(m,n));
+							$(".fill_box").css({'width':Percentage(m,n)});
+							$("#start_time").html(formatSeconds(m));
+						}
+						
+					},1000);
+				}else{
+					play_time = setInterval(function(){
+						if(m < n){
+							m++;
+							// console.log(formatSeconds(m));
+							// console.log(Percentage(m,n));
+							$(".fill_box").css({'width':Percentage(m,n)});
+							$("#start_time").html(formatSeconds(m));
+						}
+						
+					},1000);
+				}
+			};
+			
+			$('.on_play').find('a').css({
+				'background':'url(../img/pause.png) no-repeat',
+				'background-size':'100% 100%'
+			});
+			
+			flag = false;
+
+		});
+
+	};
+
+	// 时长秒（数字）转化为时分秒格式
 	function formatSeconds(value) {
-	        var secondTime = parseInt(value);// 秒
-	        var minuteTime = 0;// 分
-	        var hourTime = 0;// 小时
-	        if(secondTime > 60) {//如果秒数大于60，将秒数转换成整数
-	            //获取分钟，除以60取整数，得到整数分钟
-	            minuteTime = parseInt(secondTime / 60);
-	            //获取秒数，秒数取佘，得到整数秒数
-	            secondTime = parseInt(secondTime % 60);
-	            //如果分钟大于60，将分钟转换成小时
-	            if(minuteTime > 60) {
-	                //获取小时，获取分钟除以60，得到整数小时
-	                hourTime = parseInt(minuteTime / 60);
-	                //获取小时后取佘的分，获取分钟除以60取佘的分
-	                minuteTime = parseInt(minuteTime % 60);
-	            }
-	        }
-	        var result = "" + parseInt(secondTime) + "";
- 
-	        if(minuteTime > 0) {
-	        	result = "" + parseInt(minuteTime) + ":" + result;
-	        }
-	        if(hourTime > 0) {
-	        	result = "" + parseInt(hourTime) + ":" + result;
-	        }
-	        return result;
-	    }
+		var secondTime = parseInt(value);// 秒
+		var minuteTime = 0;// 分
+		var hourTime = 0;// 小时
+		var result = "";
+		if(secondTime > 60) {//如果秒数大于60，将秒数转换成整数
+			//获取分钟，除以60取整数，得到整数分钟
+			minuteTime = parseInt(secondTime / 60);
+			//获取秒数，秒数取佘，得到整数秒数
+			secondTime = parseInt(secondTime % 60);
+			//如果分钟大于60，将分钟转换成小时
+			if(minuteTime > 60) {
+				//获取小时，获取分钟除以60，得到整数小时
+				hourTime = parseInt(minuteTime / 60);
+				//获取小时后取佘的分，获取分钟除以60取佘的分
+				minuteTime = parseInt(minuteTime % 60);
+			}
+			if(secondTime < 10){
+				result = ":" + "0" + parseInt(secondTime) + "";
+			}else{
+				result = "" + parseInt(secondTime) + "";
+			}
+			
+		}
+		if(minuteTime <= 0){
+			if(secondTime < 10){
+				result = "00" + ":" + "0" + parseInt(secondTime) + "";
+			}else{
+				result = "00" + ":" + parseInt(secondTime) + "";
+			}
+		}else{
+			result = "" + parseInt(secondTime) + "";
+		}
+		
+		
+		if(minuteTime > 0) {
+			if(minuteTime < 10){
 
+				if(result < 10){
+					result = "0" + parseInt(minuteTime) + ":" + "0" + result;
+				}else{
+					result = "0" + parseInt(minuteTime) + ":" + result;
+				}
+			}else{
+				if(result < 10){
+					result = "" + parseInt(minuteTime) + ":" + "0" + result;
+				}else{
+					result = "" + parseInt(minuteTime) + ":" + result;
+				}
+			}
+			
+			
+		}
+		if(hourTime > 0) {
+			result = "" + parseInt(hourTime) + ":" + result;
+		}
+		return result;
+	}
 
+	// 取百分比
+	function Percentage(num, total) { 
+		return (Math.round(num / total * 10000) / 100.00 + "%");// 小数点后两位百分比
+	
+	};
+
+	// 获取鼠标点击位置
+	
+		
 </script>
 </body>
 </html>

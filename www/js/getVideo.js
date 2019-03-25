@@ -189,6 +189,18 @@ var music_list = Mock.mock('/music',{
     'author|':'高梨康治',
     'date|':'2019-03-12',
     'text|':'这是说明分析'
+  },{
+    'music|':'../audio/SUPER_EUROBEAT&InitialD&HyperMegaMix&SpaceBoy&remix.mp3',
+    'title|':'SUPER_EUROBEAT&InitialD&HyperMegaMix&SpaceBoy&remix',
+    'author|':'SUPER EUROBEAT',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/rage.mp3',
+    'title|':'rage',
+    'author|':'V.A',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
   }]
     
 });
