@@ -1,13 +1,14 @@
 //我将http.js进行了改进，为了更好的理解nodejs
 
 var port = 3000;//端口
-var hostname = "127.0.0.11";//域名
-
+var hostname = "127.0.0.11";//域名,本来是127.0.0.1的，这个域名可以改，换成主机ip就可以在局域网访问了
+// 这里的require只是nodejs自带的引入api的方法，而import是es6的模块导入语法，这就是本质区别。
 var http = require('http');
 var url=require('url');
 var fs=require('fs');//文件解析模块
 var mine=require('./mine').types;//这里是引入文件
 var path=require('path');//文件路径处理
+
 
 //var favicon = require("serve-favicon");//网站图标,0509目前我还不会
 
@@ -57,7 +58,7 @@ function start(route){
         });
     }
     
-    
+    // 每次运行你都会知道，这个
     http.createServer(onRequest).listen(port,hostname,() => {
         console.log(`服务器运行在 http://${hostname}:${port}/`);
     });

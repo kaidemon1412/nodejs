@@ -3,13 +3,18 @@
   width: 100%;
   min-width: 1360px;
   overflow: hidden;
-  background: url(../img/black_bg.jpg) repeat;
+  background: url(../img/631.jpg) repeat-y left, url(../img/631.jpg) repeat-y right;
+  background-size: auto;
+  padding-top: 78px;
 }
 
 .frist_nodejs_page .cartoon_forum_nav {
   width: 100%;
-  background: url(../img/footerbg.jpg) no-repeat center center;
-  background-size: 100% auto;
+  background: url(../img/zhuan_bg.png) repeat-x center center;
+  background-size: auto;
+  position: fixed;
+  top: 0;
+  z-index: 99;
 }
 
 .frist_nodejs_page .cartoon_forum_nav .forum_nav_cont {
@@ -150,7 +155,8 @@
   position: absolute;
   top: 78px;
   left: 0;
-  width: 100%;
+  min-width: 100%;
+  width: max-content;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: left;
@@ -170,7 +176,7 @@
   text-decoration: none;
   color: #333;
   font-size: 16px;
-  padding-left: 10px;
+  padding: 0 10px;
 }
 
 .frist_nodejs_page .cartoon_forum_nav .forum_nav_cont .cartoon_list li .sub_nav li a:hover {
@@ -192,7 +198,6 @@
 }
 
 .frist_nodejs_page .cartoon_banner {
-  width: 1360px;
   margin: 0 auto;
 }
 
@@ -202,7 +207,7 @@
   box-sizing: border-box;
   margin: 0 auto;
   overflow: hidden;
-  background-color: #fff;
+  background-color: white;
 }
 
 .frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(1) {
@@ -250,6 +255,13 @@
 .frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(7) {
   font: bold 30px "微软雅黑";
   color: #FFC2D8;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+.frist_nodejs_page .cartoon_cont .plate_title:nth-of-type(8) {
+  font: bold 30px "微软雅黑";
+  color: #f45a8d;
   text-align: center;
   margin: 50px auto 0;
 }
@@ -363,6 +375,7 @@
 
 .frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_item_top {
   width: 100%;
+  height: 100%;
 }
 
 .frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_top .scenery_item .cycle_item_top img {
@@ -455,6 +468,7 @@
 
 .frist_nodejs_page .cartoon_cont .scenery_plate .scenery_plate_foot .scenery_item .cycle_item_top {
   width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -516,6 +530,41 @@
   background-color: transparent;
   color: #4d92d9;
   transition: 0.4s;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .flex_row {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .flex_row .flex_img {
+  width: 500px;
+  margin: 0 25px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .flex_row .flex_img img {
+  width: 100%;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .flex_row .flex_text {
+  flex: 1;
+  text-align: left;
+  margin: 0 25px;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .flex_row .flex_text h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.frist_nodejs_page .cartoon_cont .scenery_plate .flex_row .flex_text p {
+  font-size: 16px;
+  color: #2b425e;
+  margin: 0;
+  text-indent: 2em;
+  line-height: 2;
 }
 
 .frist_nodejs_page .cartoon_cont .cartoon_cont_comics {
@@ -719,6 +768,7 @@
   color: #333;
   font-size: 14px;
   font-family: "微软雅黑";
+  word-break: break-all;
 }
 
 .frist_nodejs_page .cartoon_cont .cartoon_cont_comics .audeo_right .music_list .music_item .music_title .music_information .music_author {
@@ -746,10 +796,10 @@
 
 .frist_nodejs_page .cartoon_footer {
   width: 100%;
-  background: url(../img/footerbg.jpg) no-repeat center center;
-  background-size: 100% auto;
+  background: url(../img/zhuan_bg.png) repeat center center;
+  background-size: auto;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .frist_nodejs_page .cartoon_footer .about_then {

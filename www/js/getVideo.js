@@ -142,6 +142,12 @@ var work_list = Mock.mock('/comment',{
 // 音乐列表
 var music_list = Mock.mock('/music',{
   'music_list|1-1':[{
+    'music|':'../audio/NARUTO_and_HINATA.mp3',
+    'title|':'NARUTO and HINATA',
+    'author|':'高梨康治',
+    'date|':'2019-07-04',
+    'text|':'这是《火影忍者》剧场版终章里鸣人和雏田结婚的背景音乐'
+  },{
     'music|':'../audio/bring_me_back_to_life.mp3',
     'title|':'Bring Me Back to Life',
     'author|':'Ht Bristol',
@@ -167,7 +173,7 @@ var music_list = Mock.mock('/music',{
     'text|':'这是说明分析'
   },{
     'music|':'../audio/hongyan.mp3',
-    'title|':'hongyan',
+    'title|':'hongyun',
     'author|':'高梨康治',
     'date|':'2019-03-12',
     'text|':'这是说明分析'
@@ -199,6 +205,18 @@ var music_list = Mock.mock('/music',{
     'music|':'../audio/rage.mp3',
     'title|':'rage',
     'author|':'V.A',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/Joy.mp3',
+    'title|':'Joy',
+    'author|':'勝又隆一',
+    'date|':'2019-03-12',
+    'text|':'这是说明分析'
+  },{
+    'music|':'../audio/Blizzard.mp3',
+    'title|':'Blizzard',
+    'author|':'三浦大知',
     'date|':'2019-03-12',
     'text|':'这是说明分析'
   }]

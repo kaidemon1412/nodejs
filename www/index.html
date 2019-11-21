@@ -2,112 +2,17 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>个人爱好收集-私人网站</title>
-		<link rel="shortcut icon"  href="icon/favicon.ico"/>
+		<title>我的收藏</title>
+		<link rel="shortcut icon"  href="icon/red_sun.ico"/>
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="js/pogo-slider.min.css"/>
-		<link rel="stylesheet" type="text/css" href="css/forum.css"/>
-		
+		<link rel="stylesheet" type="text/css" href="css/pogo-slider.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/forum.css"/>
+        
 	</head>
 	<body>
+        <audio autoplay="true" loop="true"><source src="audio/NARUTO_and_HINATA.mp3"></audio>
 	    <div class="frist_nodejs_page">
-	    	<div class="cartoon_forum_nav">
-	    	    <div class="forum_nav_cont">
-	    	    	<a class="logo_link" href="index.html"><img class="cartoon_logo" src="img/mylogo.png"/></a>
-                    <ul class="cartoon_list">
-                        <li>
-                            <div class="nav_item">
-                                <a href="javascript:;">运动·健身</a>
-                            </div>
-                            <ul class="sub_nav">
-                                <li><a href="javascript:;">跑步</a></li>
-                                <li><a href="javascript:;">篮球</a></li>
-                                <li><a href="javascript:;">自行车</a></li>
-                                <li><a href="javascript:;">游泳</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="nav_item">
-                                <a href="javascript:;">美食·美景</a>
-                            </div>
-                            <ul class="sub_nav">
-                                <li><a href="javascript:;">舌尖上的中国</a></li>
-                                <li><a href="javascript:;">动物世界</a></li>
-                                <li><a href="javascript:;">人与自然</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="nav_item">
-                                <a href="javascript:;">经典网剧</a>
-                            </div>
-                            <ul class="sub_nav">
-                                <li><a href="javascript:;">余罪</a></li>
-                                <li><a href="javascript:;">成人记</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="nav_item">
-                            	<a href="javascript:;">热血动漫</a>
-                            </div>
-                            <ul class="sub_nav">
-                            	<li><a href="javascript:;">龙珠超</a></li>
-                            	<li><a href="javascript:;">海贼王</a></li>
-                            	<li><a href="javascript:;">火影忍者</a></li>
-                            	<li><a href="javascript:;">秦时明月</a></li>
-                            	<li><a href="javascript:;">头文字D</a></li>
-                            	<li><a href="javascript:;">名侦探柯南</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="nav_item">
-                                <a href="javascript:;">动漫电影</a>
-                            </div>
-                            <ul class="sub_nav">
-                                <li><a href="javascript:;">精灵鼠小弟</a></li>
-                                <li><a href="javascript:;">丛林有情狼</a></li>
-                                <li><a href="javascript:;">疯狂穴居人</a></li>
-                                <li><a href="javascript:;">狮子王</a></li>
-                                <li><a href="javascript:;">功夫熊猫</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li>
-                            <div class="nav_item">
-                                <a href="javascript:;">古装·抗日</a>
-                            </div>
-                            <ul class="sub_nav">
-                                <li><a href="javascript:;">怪侠一枝梅</a></li>
-                                <li><a href="javascript:;">杀虎口</a></li>
-                                <li><a href="javascript:;">雪豹</a></li>
-                                <li><a href="javascript:;">黑狐</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="nav_item">
-                                <a href="javascript:;">国外经典</a>
-                            </div>
-                            <ul class="sub_nav">
-                                <li><a href="javascript:;">斯巴达克斯</a></li>
-                                <li><a href="javascript:;">鲁宾逊漂流记</a></li>
-                                <li><a href="javascript:;">浪客剑心</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li>
-                            <div class="nav_item">
-                                <a href="javascript:;">来自B站</a>
-                            </div>
-                            <ul class="sub_nav">
-                                <li><a href="page/video_play.html?video_id=zjjy" target="_blank">致敬金庸</a></li>
-                                <li><a href="page/video_play.html?video_id=qfff" target="_blank">万妖女王X通背猿猴</a></li>
-                                <li><a href="javascript:;">幸运的卢</a></li>
-                            </ul>
-                        </li>
-                        
-                        
-                    </ul>
-	    	    </div>
-	    	</div>
+	    	<div id="node_nav"></div>
 	    	
 	    	<div class="cartoon_banner">
 	    		<div class="pogoSlider" id="js-main-slider">
@@ -446,10 +351,7 @@
                                 <img src="img/cuisine/cuisine_01.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>立春</h3>
-                                <p>立春，农历二十四节气中的第一个节气。立春是从天文上来划分的，即太阳到达黄经315°时。</p>
-                                <p>立春是中国民间重要的传统节日之一。“立”是“开始”的意思，自秦代以来，中国就一直以立春作为孟春时节的开始。所谓“一年之计在于春”，春是温暖，鸟语花香；春是生长，耕耘播种。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         <div class="scenery_item">
@@ -457,10 +359,7 @@
                                 <img src="img/cuisine/cuisine_02.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>雨水</h3>
-                                <p>雨水，是二十四节气之中的第2个节气，位于每年正月十五前后（公历2月18-20日），太阳到达黄经330°。</p>
-                                <p>雨水和谷雨、小雪、大雪一样，都是反映降水现象的节气。这天通常出嫁的女儿要回家探望父母，要给母亲送一段红绸和炖一罐肉。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         <div class="scenery_item">
@@ -468,20 +367,15 @@
                                 <img src="img/cuisine/cuisine_03.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>惊蛰</h3>
-                                <p>惊蛰，古称“启蛰”，是二十四节气中的第三个节气，标志着仲春时节的开始；太阳到达黄经345°时。</p>
-                                <p>此前，动物入冬藏伏土中，不饮不食，称为“蛰”；到了“惊蛰节”，天上的春雷惊醒蛰居的动物，称为“惊”。故惊蛰时，蛰虫惊醒，天气转暖，渐有春雷，中国大部分地区进入春耕季节。古代分惊蛰为三候：“一候桃始华；二候仓庚（黄鹂）鸣；三候鹰化为鸠。”惊蛰三候所代表的花信为：“一候桃花，二候杏花，三候蔷薇。”。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         <div class="scenery_item">
                             <div class="cycle_item_top">
-                                <img src="img/cuisine/cuisine_04.jpg"/>
+                                <img height="100%" src="img/cuisine/cuisine_04.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>春分</h3>
-                                <p>春分，是春季九十天的中分点。二十四节气之一，每年公历大约为3月20日左右，太阳位于黄经0°（春分点）时。春分这一天太阳直射地球赤道，南北半球季节相反，北半球是春分，在南半球来说就是秋分。春分是伊朗、土耳其、阿富汗、乌兹别克斯坦等国的新年，有着3000年的历史。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         <div class="scenery_item">
@@ -489,9 +383,7 @@
                                 <img src="img/cuisine/cuisine_05.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>清明</h3>
-                                <p>清明节又叫踏青节，在仲春与暮春之交。是中国传统节日，也是最重要的祭祀节日之一，是祭祖和扫墓的日子。中华民族传统的清明节大约始于周代，距今已有二千五百多年的历史。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         <div class="scenery_item">
@@ -499,10 +391,7 @@
                                 <img src="img/cuisine/cuisine_06.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>谷雨</h3>
-                                <p>谷雨是二十四节气的第六个节气，也是春季最后一个节气，每年4月19日～21日时太阳到达黄经30°时为谷雨，源自古人“雨生百谷”之说。同时也是播种移苗、埯瓜点豆的最佳时节。</p>
-                                <p>“清明断雪，谷雨断霜”，气象专家表示，谷雨是春季最后一个节气，谷雨节气的到来意味着寒潮天气基本结束，气温回升加快，大大有利于谷类农作物的生长。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         <div class="scenery_item">
@@ -510,10 +399,7 @@
                                 <img src="img/cuisine/cuisine_07.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>立夏</h3>
-                                <p>立夏是农历二十四节气中的第7个节气，夏季的第一个节气，表示盛夏时节的正式开始，太阳到达黄经45度时为立夏节气。斗指东南，维为立夏，万物至此皆长大，故名立夏也。</p>
-                                <p>《月令七十二候集解》：“立夏，四月节。立字解见春。夏，假也。物至此时皆假大也。 ”在天文学上，立夏表示即将告别春天，是夏天的开始。人们习惯上都把立夏当作是温度明显升高，炎暑将临，雷雨增多，农作物进入旺季生长的一个重要节气。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         <div class="scenery_item">
@@ -521,10 +407,7 @@
                                 <img src="img/cuisine/cuisine_08.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>立夏</h3>
-                                <p>立夏是农历二十四节气中的第7个节气，夏季的第一个节气，表示盛夏时节的正式开始，太阳到达黄经45度时为立夏节气。斗指东南，维为立夏，万物至此皆长大，故名立夏也。</p>
-                                <p>《月令七十二候集解》：“立夏，四月节。立字解见春。夏，假也。物至此时皆假大也。 ”在天文学上，立夏表示即将告别春天，是夏天的开始。人们习惯上都把立夏当作是温度明显升高，炎暑将临，雷雨增多，农作物进入旺季生长的一个重要节气。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         <div class="scenery_item">
@@ -532,10 +415,7 @@
                                 <img src="img/cuisine/cuisine_09.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>立夏</h3>
-                                <p>立夏是农历二十四节气中的第7个节气，夏季的第一个节气，表示盛夏时节的正式开始，太阳到达黄经45度时为立夏节气。斗指东南，维为立夏，万物至此皆长大，故名立夏也。</p>
-                                <p>《月令七十二候集解》：“立夏，四月节。立字解见春。夏，假也。物至此时皆假大也。 ”在天文学上，立夏表示即将告别春天，是夏天的开始。人们习惯上都把立夏当作是温度明显升高，炎暑将临，雷雨增多，农作物进入旺季生长的一个重要节气。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         <div class="scenery_item">
@@ -543,16 +423,37 @@
                                 <img src="img/cuisine/cuisine_10.jpg"/>
                             </div>
                             <div class="cycle_text">
-                                <!--<h3>立夏</h3>
-                                <p>立夏是农历二十四节气中的第7个节气，夏季的第一个节气，表示盛夏时节的正式开始，太阳到达黄经45度时为立夏节气。斗指东南，维为立夏，万物至此皆长大，故名立夏也。</p>
-                                <p>《月令七十二候集解》：“立夏，四月节。立字解见春。夏，假也。物至此时皆假大也。 ”在天文学上，立夏表示即将告别春天，是夏天的开始。人们习惯上都把立夏当作是温度明显升高，炎暑将临，雷雨增多，农作物进入旺季生长的一个重要节气。</p>
-                                <a href="javascript:;">了解详情</a>-->
+                                
                             </div>
                         </div>
                         
                     </div>
                 </div>
-	    	    <h1 class="plate_title">经典网剧</h1>
+                <h1 class="plate_title">经典网剧</h1>
+                
+                <div class="scenery_plate">
+                    <h2 class="plate_title_small">成人记</h2>
+                    <div class="flex_row">
+                        <div class="flex_img">
+                            <img src="img/film/crj_bhb.jpg" alt="">
+                        </div>
+                        <div class="flex_text">
+                            <h3>简介：</h3>
+                            <p>该电视剧讲述的是五个性格各异的帅哥在由男孩成长为男人的过程中，发生的爆笑青春故事。说说我为什么喜欢这类型的电视剧吧，因为这电视剧显得很真实，搞笑。用很诙谐的表现形式展示出大学生活各种性格人的特征。值得加入我的收藏，主要目的其实是搞笑和真实，学到的也就是对一些现实事情的看法。</p>
+                        </div>
+                    </div>
+                    <h2 class="plate_title_small">余罪</h2>
+                    <div class="flex_row">
+                        <div class="flex_img">
+                            <img src="img/film/yuzui.jpg" alt="">
+                        </div>
+                        <div class="flex_text">
+                            <h3>简介：</h3>
+                            <p>该剧改编自常书欣的同名小说，讲述警校学生余罪因特殊选拔而进入生活与社会矛盾中，之后成为卧底遇到惊险事件的故事。相比于《成人记》呢，《余罪》显得更加的凌厉，因为如果说成人记是校园搞笑片的话，那余罪就是社会生存片，因为在现实社会只有活得真实，才会活得精彩。即使主演扮演的是一个卧底，是欺骗狡诈的歹徒，要活得更加真实，这里面的思想需要自己慢慢理解。在我看来就是很优秀的演员，究竟什么才是真的自己，是流氓无赖，还是正直公民。其实都是真的，处境不一样就会表现有不一样的人格。</p>
+                        </div>
+                    </div>
+                </div>
+
 	    	    <h1 class="plate_title">热血动漫</h1>
 	    	    
 	    	    <div class="cartoon_cont_comics">
@@ -679,27 +580,79 @@
                 
 	    	    </div>
 	    		
-	    		<h1 class="plate_title">动漫电影</h1>
+                <h1 class="plate_title">动漫电影</h1>
+                <div class="scenery_plate">
+                    <h2 class="plate_title_small">精灵鼠小弟</h2>
+                    <div class="flex_row">
+                        <div class="flex_img">
+                            <img src="img/cartoon/shuxiaodi.jpg" alt="">
+                        </div>
+                        <div class="flex_text">
+                            <h3>简介：</h3>
+                            <p>该片讲述了小白鼠斯图亚特在被利特夫妇收养后，通过自己的努力和付出终于真正拥有了家人的故事。第一次看是在湖南卫视的金鹰卡通频道看的，其实在这里还看过很多动漫。《精灵鼠小弟》是为数不多的我喜欢的动漫电影，该电影系列有三部。不过第三部跟前两部不太一样，前两部真的是很写实的真人电影，斯图尔特也很逼真。小老鼠很可爱，这是该剧的一大两点。</p>
+                        </div>
+                    </div>
+                    <h2 class="plate_title_small">丛林有情狼</h2>
+                    <div class="flex_row">
+                        
+                        <div class="flex_text">
+                            <h3>简介：</h3>
+                            <p>该片主要讲述了西部狼群中最高等的阿尔法狼凯特与最低等的欧米茄狼亨弗雷，逃离人类追捕、回归家园并阻止狼族战争等一连串的冒险经历。这也是系列的动漫电影，用的手法是类似于秦时明月的3D手法，但是精品内容在第一部，可能是我个人比较喜欢曲折的冒险故事的原因吧，第一部的故事线比较曲折，这算是比较吸引我的一个优点吧。</p>
+                        </div>
+                        <div class="flex_img">
+                            <img src="img/cartoon/lang2.jpg" alt="">
+                        </div>
+                    </div>
+                    <h2 class="plate_title_small">疯狂原始人</h2>
+                    <div class="flex_row">
+                        <div class="flex_img">
+                            <img src="img/cartoon/ysr.jpg" alt="">
+                        </div>
+                        <div class="flex_text">
+                            <h3>简介：</h3>
+                            <p>电影《疯狂原始人》是讲述一个原始人家庭冒险旅行的3D喜剧动画片。原始人咕噜一家六口在老爸瓜哥的庇护下生活。每天抢夺鸵鸟蛋为食，躲避野兽的追击，每晚听老爸叙述同一个故事，在山洞里过着一成不变的生活。大女儿小伊是一个和老爸性格截然相反的充满好奇心的女孩，她不满足一辈子留在这个小山洞里，一心想要追逐山洞外面的新奇世界。</p>
+                        </div>
+                    </div>
+                    <h2 class="plate_title_small">狮子王</h2>
+                    <div class="flex_row">
+                        <div class="flex_text">
+                            <h3>简介：</h3>
+                            <p>该片讲述了小狮子王辛巴在朋友的陪伴下，经历了生命中最光荣的时刻，也遭遇了最艰难的挑战，最后终于成为了森林之王的故事。</p>
+                        </div>
+                        <div class="flex_img">
+                            <img src="img/cartoon/shiziwang.jpg" alt="">
+                        </div>
+                    </div>
+                    <h2 class="plate_title_small">功夫熊猫</h2>
+                    <div class="flex_row">
+                        <div class="flex_img">
+                            <img src="img/cartoon/kongfupande.jpg" alt="">
+                        </div>
+                        <div class="flex_text">
+                            <h3>简介：</h3>
+                            <p>《功夫熊猫》是一部以中国功夫为主题的美国动作喜剧电影，影片以中国古代为背景，其景观、布景、服装以至食物均充满中国元素。故事讲述了一只笨拙的熊猫立志成为武林高手的故事。</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
                 <h1 class="plate_title">古装·抗日</h1>
+
+
+
                 <h1 class="plate_title">国外经典</h1>
+
+                <h1 class="plate_title">来自B站</h1>
 	    	</div>
 	    	
-	    	<div class="cartoon_footer">
-	    		<div class="about_then">
-                    <a href="javascript:;"  target="_blank">个人收集风景美图</a>
-                    &nbsp;&nbsp;
-	    			<a href="about.html"  target="_blank">关于本站</a>
-	    			&nbsp;&nbsp;
-	    			<a href="world_of_warcraft.html"  target="_blank">友情链接-暴雪系列（魔兽）主题网站</a>
-	    		</div>
-	    		<p class="net_synopsis">网站简介：本网站是根据站长个人爱好编写的素材收集网站，绝对不对外公开，第一阶段只存在三个模块，视频，音频和图片。纯属个人想法只是为了测试一下nodejs服务器而开设的站长爱好收集网站。</p>
-	    	</div>
+	    	<div id="footer_box"></div>
 	    </div>
     </body>
     <script src="js/jquery-3.2.1.min.js"></script>
-		<script src="data/mock.js"></script>
+	<script src="data/mock.js"></script>
     <script src="js/jquery.pogo-slider.min.js"></script>
     <script src="js/getVideo.js"></script>
+    <script src="public/public.js"></script>
 	<script type="text/javascript">
 		$(function(){
 		   $('#js-main-slider').pogoSlider({
@@ -707,8 +660,8 @@
                 autoplayTimeout: 5000,
                 displayProgess: true,
                 preserveTargetSize: true,
-                targetWidth: 1000,
-                targetHeight: 500,
+                // targetWidth: 1000,
+                targetHeight: 400,
                 responsive: true,
 //              generateNav: false,/这是导航的点
 //              generateButtons: false,//这个控制左右按钮
@@ -718,12 +671,12 @@
 				url:'/music',
 				dataType:'json',
 				success:function(e){
-                    console.log(e.music_list);
+                    // console.log(e.music_list);
                     
                     var music_item = '';
 
                     e.music_list.forEach(element => {
-                        console.log(element);
+                        // console.log(element);
                         music_item+=`<li class="music_item">
                                 <div class="music_title">
                                     <img class="music_play_img" title="点击播放" src="img/playyellow.jpg"/>
@@ -742,6 +695,8 @@
 			});
 
 
-		});
+        });
+
+        
 	</script>
 </html>

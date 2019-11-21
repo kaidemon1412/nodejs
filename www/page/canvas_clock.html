@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas时钟展示</title>
+    <style>
+        .clock_box{
+            width: 1580px;
+            margin: 0 auto;
+            padding: 50px 150px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .clock_box .clock_item{
+            width: 500px;
+            height: 500px;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock_box">
+        <div class="clock_item">
+            <canvas id="beijing_time" width="500" height="500" />
+        </div>
+        <div class="clock_item">
+            <canvas id="london_time" width="500" height="500" />
+        </div>
+        <div class="clock_item">
+            <canvas id="newyork_time" width="500" height="500" />
+        </div>
+        <div class="clock_item">
+            <canvas id="la_time" width="500" height="500" />
+        </div>
+        <div class="clock_item">
+            <canvas id="tokyo_time" width="500" height="500" />
+        </div>
+    </div>
+</body>
+<script src="../js/word_time.js"></script>
+</html>
